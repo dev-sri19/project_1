@@ -585,7 +585,7 @@ cursor=mydb.cursor()
 
 question=st.selectbox("Select your question",("1. All the videos and the channel name",
                                               "2. channels with most number of videos",
-                                               "3. 10 most viewed videos ",
+                                               "3. 10 most viewed videos",
                                                "4. comments in each videos",
                                                "5. Videos with highest likes",
                                                "6. likes of all videos",
@@ -623,7 +623,7 @@ elif question=="2. channels with most number of videos":
     df2 = pd.DataFrame(t2, columns=["channel name", "no of videos"])
     st.write(df2)
 
-elif question=="3.10 most viewed videos":
+elif question=="3. 10 most viewed videos":
     query3 = '''select views as views,channel_name as channelname,title as videotitle from videos
                     where views is not null order by views desc limit 10'''
     cursor.execute(query3)
